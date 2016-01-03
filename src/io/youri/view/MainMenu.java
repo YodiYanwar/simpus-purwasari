@@ -23,6 +23,7 @@ public class MainMenu extends javax.swing.JFrame {
     
     FormLogin formLogin = new FormLogin();
     public FormUser formUser;
+    public KategoriUser kategoriUser;
     //public boolean showFormUser = false;
     
     public MainMenu() {
@@ -98,6 +99,11 @@ public class MainMenu extends javax.swing.JFrame {
         menuUser.add(menuItemUser);
 
         menuItemKategoriUser.setText("Manajemen Kategori User");
+        menuItemKategoriUser.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                menuItemKategoriUserActionPerformed(evt);
+            }
+        });
         menuUser.add(menuItemKategoriUser);
 
         MenuBarUtama.add(menuUser);
@@ -198,6 +204,18 @@ public class MainMenu extends javax.swing.JFrame {
         }
         formUser.setVisible(true);
     }//GEN-LAST:event_menuItemUserActionPerformed
+
+    private void menuItemKategoriUserActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_menuItemKategoriUserActionPerformed
+        
+        if(kategoriUser == null){
+            kategoriUser = new KategoriUser();
+            desktopPane.add(kategoriUser);
+            
+        } else{
+            kategoriUser.toFront();
+        }
+        kategoriUser.setVisible(true);        
+    }//GEN-LAST:event_menuItemKategoriUserActionPerformed
 
     /**
      * @param args the command line arguments

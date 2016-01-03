@@ -91,7 +91,7 @@ public class FormLogin extends javax.swing.JFrame {
         labelPassword.setFont(new java.awt.Font("Segoe UI Emoji", 0, 14)); // NOI18N
         labelPassword.setText("Password");
 
-        comboAkses.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "Item 1", "Item 2", "Item 3", "Item 4" }));
+        comboAkses.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "Item 1", "Item 2", " " }));
         comboAkses.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 comboAksesActionPerformed(evt);

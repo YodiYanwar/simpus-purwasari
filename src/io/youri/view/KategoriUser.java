@@ -5,6 +5,10 @@
  */
 package io.youri.view;
 
+import io.youri.control.Functions;
+import java.awt.Color;
+import javax.swing.JOptionPane;
+
 /**
  *
  * @author YODI YANWAR
@@ -14,8 +18,15 @@ public class KategoriUser extends javax.swing.JInternalFrame {
     /**
      * Creates new form KategoriUser
      */
+    
+    public Functions fungsi;
+        
     public KategoriUser() {
+        getContentPane().setBackground(Color.WHITE);
         initComponents();
+        
+        inisialisasi();
+        load();         
     }
 
     /**
@@ -28,31 +39,340 @@ public class KategoriUser extends javax.swing.JInternalFrame {
     private void initComponents() {
 
         jLabel1 = new javax.swing.JLabel();
+        jLayeredPane1 = new javax.swing.JLayeredPane();
+        jLabel2 = new javax.swing.JLabel();
+        textKategoriUser = new javax.swing.JTextField();
+        buttonTambah = new javax.swing.JToggleButton();
+        buttonEdit = new javax.swing.JToggleButton();
+        buttonHapus = new javax.swing.JToggleButton();
+        buttonBatal = new javax.swing.JToggleButton();
+        jLayeredPane2 = new javax.swing.JLayeredPane();
+        jScrollPane1 = new javax.swing.JScrollPane();
+        tableKategoriUser = new javax.swing.JTable();
+        buttonTutup = new javax.swing.JToggleButton();
+        labelId = new javax.swing.JLabel();
 
+        jLabel1.setFont(new java.awt.Font("Segoe UI Emoji", 1, 18)); // NOI18N
         jLabel1.setText("Manajemen Kategori User");
+
+        jLayeredPane1.setBorder(javax.swing.BorderFactory.createTitledBorder("Kategori User"));
+
+        jLabel2.setFont(new java.awt.Font("Segoe UI Emoji", 0, 12)); // NOI18N
+        jLabel2.setText("Nama Kategori User   :");
+
+        buttonTambah.setText("Tambah Kategori");
+        buttonTambah.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                buttonTambahActionPerformed(evt);
+            }
+        });
+
+        buttonEdit.setText("Edit");
+        buttonEdit.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                buttonEditActionPerformed(evt);
+            }
+        });
+
+        buttonHapus.setText("Hapus");
+        buttonHapus.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                buttonHapusActionPerformed(evt);
+            }
+        });
+
+        buttonBatal.setText("Batal");
+        buttonBatal.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                buttonBatalActionPerformed(evt);
+            }
+        });
+
+        javax.swing.GroupLayout jLayeredPane1Layout = new javax.swing.GroupLayout(jLayeredPane1);
+        jLayeredPane1.setLayout(jLayeredPane1Layout);
+        jLayeredPane1Layout.setHorizontalGroup(
+            jLayeredPane1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jLayeredPane1Layout.createSequentialGroup()
+                .addContainerGap()
+                .addGroup(jLayeredPane1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(jLayeredPane1Layout.createSequentialGroup()
+                        .addComponent(jLabel2, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                        .addComponent(textKategoriUser, javax.swing.GroupLayout.PREFERRED_SIZE, 151, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addGroup(jLayeredPane1Layout.createSequentialGroup()
+                        .addComponent(buttonTambah)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                        .addComponent(buttonEdit, javax.swing.GroupLayout.PREFERRED_SIZE, 84, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                        .addGroup(jLayeredPane1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(buttonBatal, javax.swing.GroupLayout.PREFERRED_SIZE, 84, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(buttonHapus, javax.swing.GroupLayout.PREFERRED_SIZE, 84, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addGap(0, 10, Short.MAX_VALUE)))
+                .addContainerGap())
+        );
+        jLayeredPane1Layout.setVerticalGroup(
+            jLayeredPane1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jLayeredPane1Layout.createSequentialGroup()
+                .addContainerGap()
+                .addGroup(jLayeredPane1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                    .addComponent(textKategoriUser, javax.swing.GroupLayout.DEFAULT_SIZE, 27, Short.MAX_VALUE)
+                    .addComponent(jLabel2, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                .addGap(20, 20, 20)
+                .addGroup(jLayeredPane1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(buttonTambah, javax.swing.GroupLayout.PREFERRED_SIZE, 31, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(buttonEdit, javax.swing.GroupLayout.PREFERRED_SIZE, 31, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(buttonHapus, javax.swing.GroupLayout.PREFERRED_SIZE, 31, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(buttonBatal, javax.swing.GroupLayout.PREFERRED_SIZE, 31, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+        );
+        jLayeredPane1.setLayer(jLabel2, javax.swing.JLayeredPane.DEFAULT_LAYER);
+        jLayeredPane1.setLayer(textKategoriUser, javax.swing.JLayeredPane.DEFAULT_LAYER);
+        jLayeredPane1.setLayer(buttonTambah, javax.swing.JLayeredPane.DEFAULT_LAYER);
+        jLayeredPane1.setLayer(buttonEdit, javax.swing.JLayeredPane.DEFAULT_LAYER);
+        jLayeredPane1.setLayer(buttonHapus, javax.swing.JLayeredPane.DEFAULT_LAYER);
+        jLayeredPane1.setLayer(buttonBatal, javax.swing.JLayeredPane.DEFAULT_LAYER);
+
+        jLayeredPane2.setBorder(javax.swing.BorderFactory.createTitledBorder("Daftar Kategori User"));
+
+        tableKategoriUser.setModel(new javax.swing.table.DefaultTableModel(
+            new Object [][] {
+                {null, null, null, null},
+                {null, null, null, null},
+                {null, null, null, null},
+                {null, null, null, null}
+            },
+            new String [] {
+                "Title 1", "Title 2", "Title 3", "Title 4"
+            }
+        ));
+        tableKategoriUser.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                tableKategoriUserMouseClicked(evt);
+            }
+        });
+        jScrollPane1.setViewportView(tableKategoriUser);
+
+        javax.swing.GroupLayout jLayeredPane2Layout = new javax.swing.GroupLayout(jLayeredPane2);
+        jLayeredPane2.setLayout(jLayeredPane2Layout);
+        jLayeredPane2Layout.setHorizontalGroup(
+            jLayeredPane2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jLayeredPane2Layout.createSequentialGroup()
+                .addContainerGap()
+                .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 0, Short.MAX_VALUE)
+                .addContainerGap())
+        );
+        jLayeredPane2Layout.setVerticalGroup(
+            jLayeredPane2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jLayeredPane2Layout.createSequentialGroup()
+                .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 213, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(0, 10, Short.MAX_VALUE))
+        );
+        jLayeredPane2.setLayer(jScrollPane1, javax.swing.JLayeredPane.DEFAULT_LAYER);
+
+        buttonTutup.setText("Tutup");
+        buttonTutup.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                buttonTutupActionPerformed(evt);
+            }
+        });
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
-                .addGap(210, 210, 210)
-                .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 180, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(248, Short.MAX_VALUE))
+                .addContainerGap()
+                .addComponent(jLayeredPane1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(layout.createSequentialGroup()
+                        .addComponent(labelId, javax.swing.GroupLayout.PREFERRED_SIZE, 63, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 186, Short.MAX_VALUE)
+                        .addComponent(buttonTutup, javax.swing.GroupLayout.PREFERRED_SIZE, 84, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addContainerGap())
+                    .addComponent(jLayeredPane2)))
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 248, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(217, 217, 217))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
                 .addContainerGap()
                 .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 42, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(307, Short.MAX_VALUE))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                    .addComponent(jLayeredPane2)
+                    .addComponent(jLayeredPane1))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                    .addComponent(buttonTutup, javax.swing.GroupLayout.PREFERRED_SIZE, 31, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addGroup(layout.createSequentialGroup()
+                        .addComponent(labelId, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                        .addGap(9, 9, 9)))
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
+    private void buttonTambahActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_buttonTambahActionPerformed
+        tambah();
+    }//GEN-LAST:event_buttonTambahActionPerformed
+
+    private void buttonEditActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_buttonEditActionPerformed
+        edit();
+    }//GEN-LAST:event_buttonEditActionPerformed
+
+    private void buttonHapusActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_buttonHapusActionPerformed
+        hapus();
+    }//GEN-LAST:event_buttonHapusActionPerformed
+
+    private void buttonBatalActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_buttonBatalActionPerformed
+        batal();
+    }//GEN-LAST:event_buttonBatalActionPerformed
+
+    private void tableKategoriUserMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_tableKategoriUserMouseClicked
+        klikTable();
+    }//GEN-LAST:event_tableKategoriUserMouseClicked
+
+    private void buttonTutupActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_buttonTutupActionPerformed
+        this.setVisible(false);
+    }//GEN-LAST:event_buttonTutupActionPerformed
+
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JToggleButton buttonBatal;
+    private javax.swing.JToggleButton buttonEdit;
+    private javax.swing.JToggleButton buttonHapus;
+    private javax.swing.JToggleButton buttonTambah;
+    private javax.swing.JToggleButton buttonTutup;
     private javax.swing.JLabel jLabel1;
+    private javax.swing.JLabel jLabel2;
+    private javax.swing.JLayeredPane jLayeredPane1;
+    private javax.swing.JLayeredPane jLayeredPane2;
+    private javax.swing.JScrollPane jScrollPane1;
+    private javax.swing.JLabel labelId;
+    private javax.swing.JTable tableKategoriUser;
+    private javax.swing.JTextField textKategoriUser;
     // End of variables declaration//GEN-END:variables
+
+    private void inisialisasi() {
+        buttonEdit.setVisible(false);
+        buttonHapus.setVisible(false);
+        buttonBatal.setVisible(false);
+        labelId.setVisible(false);
+        setTextStatus(false);
+    }
+
+    private void load() {
+        fungsi = new Functions();
+        
+        String sql = "SELECT id_kategori_user AS 'ID', nama_kategori_user AS 'Nama Kategori User' FROM tbl_kategori_user";
+        
+        fungsi.bindingTable(sql, tableKategoriUser);       
+        
+    }
+
+    
+    private void setTextStatus(boolean status){
+        textKategoriUser.setEnabled(status);
+    }
+
+    private void tambah() {
+        if("Tambah Kategori".equals(buttonTambah.getText())){
+            setTextStatus(true);
+            buttonTambah.setText("Simpan");
+            buttonBatal.setVisible(true);
+        }else
+        if("Simpan".equals(buttonTambah.getText())){
+            
+            String sql = "INSERT INTO `tbl_kategori_user`(`nama_kategori_user`) VALUES ('"+textKategoriUser.getText()+"')";
+            
+            if(fungsi.runSQL(sql)){
+                fungsi.msgBox("Berhasil Menambah Kategori User", "SUKSES", 1);
+                buttonTambah.setText("Tambah Kategori");
+                clear();
+                setTextStatus(false);
+                buttonBatal.setVisible(false);
+            load();
+            } else{
+                fungsi.msgBox("Gagal Menambah Kategori User", "GAGAL", 0);
+            }
+        }
+    }
+
+    private void clear() {
+        textKategoriUser.setText("");
+    }
+
+    private void klikTable() {
+        buttonEdit.setVisible(true);
+        buttonHapus.setVisible(true);
+        buttonBatal.setVisible(true);
+        buttonTambah.setVisible(false);
+        setTextStatus(true);
+        
+       int i=this.tableKategoriUser.getSelectedRow();
+        if(i==-1)
+        {
+            return;
+        }
+       
+       labelId.setText(String.valueOf(tableKategoriUser.getModel().getValueAt(i,0)));
+       textKategoriUser.setText(String.valueOf(tableKategoriUser.getModel().getValueAt(i,1)));
+       
+    }
+
+    private void batal() {
+            clear();
+            buttonEdit.setVisible(false);
+            buttonHapus.setVisible(false);
+            buttonTambah.setText("Tambah Kategori");
+            buttonTambah.setVisible(true);
+            setTextStatus(false);       
+            buttonBatal.setVisible(false);
+    }
+
+    private void edit() {
+        String sql = "UPDATE tbl_kategori_user SET nama_kategori_user='"+textKategoriUser.getText()+"' WHERE id_kategori_user='"+labelId.getText()+"'";
+        
+            if(fungsi.runSQL(sql)){
+                fungsi.msgBox("Berhasil Mengubah Kategori User", "SUKSES", 1);
+                buttonTambah.setText("Tambah Kategori");
+                buttonTambah.setVisible(true);
+                buttonEdit.setVisible(false);
+                buttonHapus.setVisible(false);
+                clear();
+                setTextStatus(false);
+                buttonBatal.setVisible(false);
+            load();
+            } else{
+                fungsi.msgBox("Gagal Mengubah Kategori User", "GAGAL", 0);
+            }        
+    }
+
+    private void hapus() {
+        int app;
+        if((app = JOptionPane.showConfirmDialog(null,"Hapus Data User ?","Perhatian",JOptionPane.YES_NO_OPTION))==0){
+             String sql = "DELETE FROM `tbl_kategori_user` WHERE id_kategori_user="+labelId.getText()+"";
+             
+            if(fungsi.runSQL(sql)){
+                fungsi.msgBox("Berhasil Manghapus Kategori User", "SUKSES", 1);
+                buttonTambah.setText("Tambah Kategori");
+                buttonTambah.setVisible(true);
+                buttonHapus.setVisible(false);
+                buttonEdit.setVisible(false);
+                clear();
+                setTextStatus(false);
+                buttonBatal.setVisible(false);
+            load();
+            } else{
+                fungsi.msgBox("Gagal Manghapus Kategori User", "GAGAL", 0);
+            }               
+        }           
+    }    
+
 }
