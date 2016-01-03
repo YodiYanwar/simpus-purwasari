@@ -6,6 +6,9 @@
 package io.youri.view;
 
 import java.awt.Color;
+import java.beans.PropertyVetoException;
+import java.util.logging.Level;
+import java.util.logging.Logger;
 import javax.swing.JOptionPane;
 
 /**
@@ -19,7 +22,8 @@ public class MainMenu extends javax.swing.JFrame {
      */
     
     FormLogin formLogin = new FormLogin();
-    //private FormUser formUser;
+    public FormUser formUser;
+    //public boolean showFormUser = false;
     
     public MainMenu() {
         
@@ -184,17 +188,15 @@ public class MainMenu extends javax.swing.JFrame {
     }//GEN-LAST:event_menuUserActionPerformed
 
     private void menuItemUserActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_menuItemUserActionPerformed
-        
-     
-        //FormUser formUser = null;
-        
-        //if(formUser == null){
-            FormUser formUser = new FormUser();
-            this.desktopPane.add(formUser);
-            formUser.show();            
-        //}
-        
-            System.out.println(formUser);
+      
+        if(formUser == null){
+            formUser = new FormUser();
+            desktopPane.add(formUser);
+            
+        } else{
+            formUser.toFront();
+        }
+        formUser.setVisible(true);
     }//GEN-LAST:event_menuItemUserActionPerformed
 
     /**

@@ -75,6 +75,7 @@ public class FormLogin extends javax.swing.JFrame {
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setBackground(new java.awt.Color(255, 255, 255));
+        setResizable(false);
 
         labelSIMPUS.setFont(new java.awt.Font("Segoe UI Emoji", 1, 18)); // NOI18N
         labelSIMPUS.setText("SIMPUS PURWASARI");
