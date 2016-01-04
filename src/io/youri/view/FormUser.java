@@ -570,7 +570,10 @@ public class FormUser extends javax.swing.JInternalFrame {
              
             if(fungsi.runSQL(sql)){
                 fungsi.msgBox("Berhasil Manghapus Data User", "SUKSES", 1);
+                buttonSimpan.setVisible(true);
                 buttonSimpan.setText("Baru");
+                buttonEdit.setVisible(false);
+                buttonHapus.setVisible(false);
                 clear();
                 setTextStatus(false);
                 buttonBatal.setVisible(false);

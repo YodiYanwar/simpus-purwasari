@@ -30,21 +30,33 @@
             </MenuItem>
           </SubComponents>
         </Menu>
-        <Menu class="javax.swing.JMenu" name="menuExit">
+        <Menu class="javax.swing.JMenu" name="menuAdministrasi">
           <Properties>
-            <Property name="text" type="java.lang.String" value="Exit"/>
+            <Property name="text" type="java.lang.String" value="Administrasi"/>
           </Properties>
-          <Events>
-            <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="menuExitActionPerformed"/>
-          </Events>
+        </Menu>
+        <Menu class="javax.swing.JMenu" name="menuLaporan">
+          <Properties>
+            <Property name="text" type="java.lang.String" value="Laporan"/>
+          </Properties>
+        </Menu>
+        <Menu class="javax.swing.JMenu" name="menuPasien">
+          <Properties>
+            <Property name="text" type="java.lang.String" value="Pasien"/>
+          </Properties>
           <SubComponents>
-            <MenuItem class="javax.swing.JMenuItem" name="menuItemExit">
+            <MenuItem class="javax.swing.JMenuItem" name="menuItemManajemenPasien1">
               <Properties>
-                <Property name="text" type="java.lang.String" value="Keluar"/>
+                <Property name="text" type="java.lang.String" value="Manajemen Pasien"/>
               </Properties>
               <Events>
-                <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="menuItemExitActionPerformed"/>
+                <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="menuItemManajemenPasien1ActionPerformed"/>
               </Events>
+            </MenuItem>
+            <MenuItem class="javax.swing.JMenuItem" name="menuItemRegistrasiPasien">
+              <Properties>
+                <Property name="text" type="java.lang.String" value="Registrasi Pasien"/>
+              </Properties>
             </MenuItem>
           </SubComponents>
         </Menu>
@@ -66,15 +78,23 @@
             </MenuItem>
           </SubComponents>
         </Menu>
-        <Menu class="javax.swing.JMenu" name="menuAdministrasi">
+        <Menu class="javax.swing.JMenu" name="menuExit">
           <Properties>
-            <Property name="text" type="java.lang.String" value="Administrasi"/>
+            <Property name="text" type="java.lang.String" value="Exit"/>
           </Properties>
-        </Menu>
-        <Menu class="javax.swing.JMenu" name="menuLaporan">
-          <Properties>
-            <Property name="text" type="java.lang.String" value="Laporan"/>
-          </Properties>
+          <Events>
+            <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="menuExitActionPerformed"/>
+          </Events>
+          <SubComponents>
+            <MenuItem class="javax.swing.JMenuItem" name="menuItemExit">
+              <Properties>
+                <Property name="text" type="java.lang.String" value="Keluar"/>
+              </Properties>
+              <Events>
+                <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="menuItemExitActionPerformed"/>
+              </Events>
+            </MenuItem>
+          </SubComponents>
         </Menu>
       </SubComponents>
     </Menu>
@@ -124,7 +144,7 @@
       <Layout>
         <DimensionLayout dim="0">
           <Group type="103" groupAlignment="0" attributes="0">
-              <EmptySpace min="0" pref="1323" max="32767" attributes="0"/>
+              <EmptySpace min="0" pref="1415" max="32767" attributes="0"/>
           </Group>
         </DimensionLayout>
         <DimensionLayout dim="1">

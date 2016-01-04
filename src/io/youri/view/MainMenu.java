@@ -24,6 +24,7 @@ public class MainMenu extends javax.swing.JFrame {
     FormLogin formLogin = new FormLogin();
     public FormUser formUser;
     public KategoriUser kategoriUser;
+    public FormPasien formPasien;
     //public boolean showFormUser = false;
     
     public MainMenu() {
@@ -36,11 +37,12 @@ public class MainMenu extends javax.swing.JFrame {
         if("Administrator".equals(kategoriUser)){
             menuAdministrasi.setVisible(false);
             menuLaporan.setVisible(false);
-            
+            menuPasien.setVisible(false);
         }else
         if("Administrasi".equals(kategoriUser)){
             menuUser.setVisible(false);
-            
+            menuAdministrasi.setVisible(true);
+            menuPasien.setVisible(true);
         }        
         
         
@@ -63,12 +65,15 @@ public class MainMenu extends javax.swing.JFrame {
         menuUser = new javax.swing.JMenu();
         menuItemUser = new javax.swing.JMenuItem();
         menuItemKategoriUser = new javax.swing.JMenuItem();
-        menuExit = new javax.swing.JMenu();
-        menuItemExit = new javax.swing.JMenuItem();
-        menuLogout = new javax.swing.JMenu();
-        menuItemLogout = new javax.swing.JMenuItem();
         menuAdministrasi = new javax.swing.JMenu();
         menuLaporan = new javax.swing.JMenu();
+        menuPasien = new javax.swing.JMenu();
+        menuItemManajemenPasien1 = new javax.swing.JMenuItem();
+        menuItemRegistrasiPasien = new javax.swing.JMenuItem();
+        menuLogout = new javax.swing.JMenu();
+        menuItemLogout = new javax.swing.JMenuItem();
+        menuExit = new javax.swing.JMenu();
+        menuItemExit = new javax.swing.JMenuItem();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
@@ -76,7 +81,7 @@ public class MainMenu extends javax.swing.JFrame {
         desktopPane.setLayout(desktopPaneLayout);
         desktopPaneLayout.setHorizontalGroup(
             desktopPaneLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 1323, Short.MAX_VALUE)
+            .addGap(0, 1415, Short.MAX_VALUE)
         );
         desktopPaneLayout.setVerticalGroup(
             desktopPaneLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -108,22 +113,26 @@ public class MainMenu extends javax.swing.JFrame {
 
         MenuBarUtama.add(menuUser);
 
-        menuExit.setText("Exit");
-        menuExit.addActionListener(new java.awt.event.ActionListener() {
+        menuAdministrasi.setText("Administrasi");
+        MenuBarUtama.add(menuAdministrasi);
+
+        menuLaporan.setText("Laporan");
+        MenuBarUtama.add(menuLaporan);
+
+        menuPasien.setText("Pasien");
+
+        menuItemManajemenPasien1.setText("Manajemen Pasien");
+        menuItemManajemenPasien1.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                menuExitActionPerformed(evt);
+                menuItemManajemenPasien1ActionPerformed(evt);
             }
         });
+        menuPasien.add(menuItemManajemenPasien1);
 
-        menuItemExit.setText("Keluar");
-        menuItemExit.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                menuItemExitActionPerformed(evt);
-            }
-        });
-        menuExit.add(menuItemExit);
+        menuItemRegistrasiPasien.setText("Registrasi Pasien");
+        menuPasien.add(menuItemRegistrasiPasien);
 
-        MenuBarUtama.add(menuExit);
+        MenuBarUtama.add(menuPasien);
 
         menuLogout.setText("Logout");
         menuLogout.addActionListener(new java.awt.event.ActionListener() {
@@ -142,11 +151,22 @@ public class MainMenu extends javax.swing.JFrame {
 
         MenuBarUtama.add(menuLogout);
 
-        menuAdministrasi.setText("Administrasi");
-        MenuBarUtama.add(menuAdministrasi);
+        menuExit.setText("Exit");
+        menuExit.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                menuExitActionPerformed(evt);
+            }
+        });
 
-        menuLaporan.setText("Laporan");
-        MenuBarUtama.add(menuLaporan);
+        menuItemExit.setText("Keluar");
+        menuItemExit.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                menuItemExitActionPerformed(evt);
+            }
+        });
+        menuExit.add(menuItemExit);
+
+        MenuBarUtama.add(menuExit);
 
         setJMenuBar(MenuBarUtama);
 
@@ -217,6 +237,17 @@ public class MainMenu extends javax.swing.JFrame {
         kategoriUser.setVisible(true);        
     }//GEN-LAST:event_menuItemKategoriUserActionPerformed
 
+    private void menuItemManajemenPasien1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_menuItemManajemenPasien1ActionPerformed
+        if(formPasien == null){
+            formPasien = new FormPasien();
+            desktopPane.add(formPasien);
+            
+        } else{
+            formPasien.toFront();
+        }
+        formPasien.setVisible(true); 
+    }//GEN-LAST:event_menuItemManajemenPasien1ActionPerformed
+
     /**
      * @param args the command line arguments
      */
@@ -260,9 +291,12 @@ public class MainMenu extends javax.swing.JFrame {
     private javax.swing.JMenuItem menuItemExit;
     private javax.swing.JMenuItem menuItemKategoriUser;
     private javax.swing.JMenuItem menuItemLogout;
+    private javax.swing.JMenuItem menuItemManajemenPasien1;
+    private javax.swing.JMenuItem menuItemRegistrasiPasien;
     private javax.swing.JMenuItem menuItemUser;
     private javax.swing.JMenu menuLaporan;
     private javax.swing.JMenu menuLogout;
+    private javax.swing.JMenu menuPasien;
     private javax.swing.JMenu menuUser;
     // End of variables declaration//GEN-END:variables
 }
