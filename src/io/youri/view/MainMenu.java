@@ -5,6 +5,7 @@
  */
 package io.youri.view;
 
+import io.youri.control.DesktopPaneBackground;
 import java.awt.Color;
 import java.beans.PropertyVetoException;
 import java.util.logging.Level;
@@ -25,6 +26,7 @@ public class MainMenu extends javax.swing.JFrame {
     public FormUser formUser;
     public KategoriUser kategoriUser;
     public FormPasien formPasien;
+    public FormKotaKab formKotaKab;
     //public boolean showFormUser = false;
     
     public MainMenu() {
@@ -60,7 +62,7 @@ public class MainMenu extends javax.swing.JFrame {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
-        desktopPane = new javax.swing.JDesktopPane();
+        desktopPane = new DesktopPaneBackground();
         MenuBarUtama = new javax.swing.JMenuBar();
         menuUser = new javax.swing.JMenu();
         menuItemUser = new javax.swing.JMenuItem();
@@ -70,6 +72,10 @@ public class MainMenu extends javax.swing.JFrame {
         menuPasien = new javax.swing.JMenu();
         menuItemManajemenPasien1 = new javax.swing.JMenuItem();
         menuItemRegistrasiPasien = new javax.swing.JMenuItem();
+        jMenu1 = new javax.swing.JMenu();
+        menuItemKotaKab = new javax.swing.JMenuItem();
+        jMenuItem2 = new javax.swing.JMenuItem();
+        jMenuItem3 = new javax.swing.JMenuItem();
         menuLogout = new javax.swing.JMenu();
         menuItemLogout = new javax.swing.JMenuItem();
         menuExit = new javax.swing.JMenu();
@@ -85,7 +91,7 @@ public class MainMenu extends javax.swing.JFrame {
         );
         desktopPaneLayout.setVerticalGroup(
             desktopPaneLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 659, Short.MAX_VALUE)
+            .addGap(0, 713, Short.MAX_VALUE)
         );
 
         menuUser.setText("User");
@@ -131,6 +137,24 @@ public class MainMenu extends javax.swing.JFrame {
 
         menuItemRegistrasiPasien.setText("Registrasi Pasien");
         menuPasien.add(menuItemRegistrasiPasien);
+
+        jMenu1.setText("Manajemen Lokasi");
+
+        menuItemKotaKab.setText("Kota / Kabupaten");
+        menuItemKotaKab.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                menuItemKotaKabActionPerformed(evt);
+            }
+        });
+        jMenu1.add(menuItemKotaKab);
+
+        jMenuItem2.setText("Kecamatan");
+        jMenu1.add(jMenuItem2);
+
+        jMenuItem3.setText("Desa");
+        jMenu1.add(jMenuItem3);
+
+        menuPasien.add(jMenu1);
 
         MenuBarUtama.add(menuPasien);
 
@@ -180,10 +204,7 @@ public class MainMenu extends javax.swing.JFrame {
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(layout.createSequentialGroup()
-                .addGap(2, 2, 2)
-                .addComponent(desktopPane, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(52, Short.MAX_VALUE))
+            .addComponent(desktopPane, javax.swing.GroupLayout.Alignment.TRAILING)
         );
 
         pack();
@@ -248,6 +269,17 @@ public class MainMenu extends javax.swing.JFrame {
         formPasien.setVisible(true); 
     }//GEN-LAST:event_menuItemManajemenPasien1ActionPerformed
 
+    private void menuItemKotaKabActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_menuItemKotaKabActionPerformed
+        if(formKotaKab == null){
+            formKotaKab = new FormKotaKab();
+            desktopPane.add(formKotaKab);
+            
+        } else{
+            formKotaKab.toFront();
+        }
+        formKotaKab.setVisible(true);         
+    }//GEN-LAST:event_menuItemKotaKabActionPerformed
+
     /**
      * @param args the command line arguments
      */
@@ -286,10 +318,14 @@ public class MainMenu extends javax.swing.JFrame {
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JMenuBar MenuBarUtama;
     private javax.swing.JDesktopPane desktopPane;
+    private javax.swing.JMenu jMenu1;
+    private javax.swing.JMenuItem jMenuItem2;
+    private javax.swing.JMenuItem jMenuItem3;
     private javax.swing.JMenu menuAdministrasi;
     private javax.swing.JMenu menuExit;
     private javax.swing.JMenuItem menuItemExit;
     private javax.swing.JMenuItem menuItemKategoriUser;
+    private javax.swing.JMenuItem menuItemKotaKab;
     private javax.swing.JMenuItem menuItemLogout;
     private javax.swing.JMenuItem menuItemManajemenPasien1;
     private javax.swing.JMenuItem menuItemRegistrasiPasien;

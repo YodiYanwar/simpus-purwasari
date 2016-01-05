@@ -74,6 +74,8 @@ public class FormPasien extends javax.swing.JInternalFrame {
         jLabel8.setFont(new java.awt.Font("Segoe UI Emoji", 0, 12)); // NOI18N
         jLabel8.setText("Waktu Update");
 
+        setOpaque(true);
+
         jLayeredPane1.setBorder(javax.swing.BorderFactory.createTitledBorder("Pasien"));
 
         jLabel2.setFont(new java.awt.Font("Segoe UI Emoji", 0, 12)); // NOI18N
