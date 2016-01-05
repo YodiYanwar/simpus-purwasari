@@ -48,7 +48,7 @@ public class FormKotaKab extends javax.swing.JInternalFrame {
         buttonHapus = new javax.swing.JButton();
         buttonBatal = new javax.swing.JButton();
         labelKotaKab = new javax.swing.JLabel();
-        labelTitikDuaId1 = new javax.swing.JLabel();
+        labelTitikDuaKotaKab = new javax.swing.JLabel();
         comboKotaKab = new javax.swing.JComboBox();
         labelId = new javax.swing.JLabel();
         buttonTutup = new javax.swing.JButton();
@@ -94,7 +94,7 @@ public class FormKotaKab extends javax.swing.JInternalFrame {
 
         labelKotaKab.setText("Kota / Kab");
 
-        labelTitikDuaId1.setText(":");
+        labelTitikDuaKotaKab.setText(":");
 
         comboKotaKab.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "Kota", "Kab" }));
 
@@ -108,7 +108,7 @@ public class FormKotaKab extends javax.swing.JInternalFrame {
                     .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layerKotaKabLayout.createSequentialGroup()
                         .addComponent(labelKotaKab, javax.swing.GroupLayout.PREFERRED_SIZE, 131, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                        .addComponent(labelTitikDuaId1, javax.swing.GroupLayout.PREFERRED_SIZE, 17, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addComponent(labelTitikDuaKotaKab, javax.swing.GroupLayout.PREFERRED_SIZE, 17, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                         .addComponent(comboKotaKab, javax.swing.GroupLayout.PREFERRED_SIZE, 167, javax.swing.GroupLayout.PREFERRED_SIZE))
                     .addGroup(layerKotaKabLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
@@ -138,7 +138,7 @@ public class FormKotaKab extends javax.swing.JInternalFrame {
                 .addGap(20, 20, 20)
                 .addGroup(layerKotaKabLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(labelKotaKab, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(labelTitikDuaId1, javax.swing.GroupLayout.PREFERRED_SIZE, 29, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(labelTitikDuaKotaKab, javax.swing.GroupLayout.PREFERRED_SIZE, 29, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(comboKotaKab, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addGroup(layerKotaKabLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
@@ -164,7 +164,7 @@ public class FormKotaKab extends javax.swing.JInternalFrame {
         layerKotaKab.setLayer(buttonHapus, javax.swing.JLayeredPane.DEFAULT_LAYER);
         layerKotaKab.setLayer(buttonBatal, javax.swing.JLayeredPane.DEFAULT_LAYER);
         layerKotaKab.setLayer(labelKotaKab, javax.swing.JLayeredPane.DEFAULT_LAYER);
-        layerKotaKab.setLayer(labelTitikDuaId1, javax.swing.JLayeredPane.DEFAULT_LAYER);
+        layerKotaKab.setLayer(labelTitikDuaKotaKab, javax.swing.JLayeredPane.DEFAULT_LAYER);
         layerKotaKab.setLayer(comboKotaKab, javax.swing.JLayeredPane.DEFAULT_LAYER);
         layerKotaKab.setLayer(labelId, javax.swing.JLayeredPane.DEFAULT_LAYER);
 
@@ -309,7 +309,7 @@ public class FormKotaKab extends javax.swing.JInternalFrame {
     private javax.swing.JLabel labelCari;
     private javax.swing.JLabel labelId;
     private javax.swing.JLabel labelKotaKab;
-    private javax.swing.JLabel labelTitikDuaId1;
+    private javax.swing.JLabel labelTitikDuaKotaKab;
     private javax.swing.JLayeredPane layerDaftar;
     private javax.swing.JLayeredPane layerKotaKab;
     private javax.swing.JTable tableKotaKab;
